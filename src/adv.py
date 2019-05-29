@@ -50,39 +50,39 @@ room = {
 # Make a new player object that is currently in the 'outside' room.
 
 player = Player('outside')
-room = room[player.room]
 
 # helper function that gives you a list of directions available to you
 
 # Write a loop that:
 while True:
+    current_room = room[player.room]
 # Prints the current room name
-    print(player.room)
+    print(current_room.name)
 # Prints the current description (the textwrap module might be useful here).
-    # print(room.description)
+    print(current_room.description)
 # Waits for user input and decides what to do.
     cmd = input("Please input n/s/e/w: ")
     if cmd == "q":
         break
     elif cmd == "n":
         player.direction("n")
-        if room.n_to:
-            player.room = room.n_to
+        if current_room.n_to:
+            player.room = current_room.n_to
         pass
     elif cmd == "s":
         player.direction("s")
-        if room.s_to:
-            player.room = room.s_to
+        if current_room.s_to:
+            player.room = current_room.s_to
         pass
     elif cmd == "e":
         player.direction("e")
-        if room.e_to:
-            player.room = room.e_to
+        if current_room.e_to:
+            player.room = current_room.e_to
         pass
     elif cmd == "w":
         player.direction("w")
-        if room.w_to:
-            player.room = room.w_to
+        if current_room.w_to:
+            player.room = current_room.w_to
         pass
     else:
         print("Input n/s/e/w, or q to quit")
