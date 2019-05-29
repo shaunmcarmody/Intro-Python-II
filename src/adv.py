@@ -11,8 +11,7 @@ room = {
                      "foyer",
                      None,
                      None,
-                     None,
-                    ),
+                     None),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
                     passages run north and east.""",
